@@ -17,9 +17,10 @@ function SidebarComponent() {
             />
             <ContactMeComponent
                 cellphoneNumber="+989386288279"
+                emailAddress="alirezaja1384@gmail.com"
+                linkedinUsername="alirezaja1384"
                 telegramUsername="alirezaja1384"
                 githubUsername="alirezaja1384"
-                stackoverflowId={11932925}
             />
         </div>
     );

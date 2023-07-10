@@ -1,20 +1,22 @@
 import CallIcon from "@mui/icons-material/Call";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import QuestionAnswerIcon from "@mui/icons-material/QuestionAnswer";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 export interface ContactMeComponentProps {
     cellphoneNumber: string;
+    emailAddress: string;
+    linkedinUsername: string;
     telegramUsername: string;
     githubUsername: string;
-    stackoverflowId: number;
 }
 
 function ContactMeComponent({
     cellphoneNumber,
+    emailAddress,
+    linkedinUsername,
     telegramUsername,
     githubUsername,
-    stackoverflowId,
 }: ContactMeComponentProps) {
     return (
         <div className="w-full px-4 py-2">
@@ -23,6 +25,19 @@ function ContactMeComponent({
                 <li>
                     <a className="no-style" href={`tel:${cellphoneNumber}`}>
                         <CallIcon /> {cellphoneNumber}
+                    </a>
+                </li>
+                <li>
+                    <a className="no-style" href={`mailto:${emailAddress}`}>
+                        <CallIcon /> {emailAddress}
+                    </a>
+                </li>
+                <li>
+                    <a
+                        className="no-style"
+                        href={`https://www.linkedin.com/in/${linkedinUsername}`}
+                    >
+                        <LinkedInIcon /> {linkedinUsername}
                     </a>
                 </li>
                 <li>
@@ -39,14 +54,6 @@ function ContactMeComponent({
                         href={`https://github.com/${githubUsername}`}
                     >
                         <GitHubIcon /> @{githubUsername}
-                    </a>
-                </li>
-                <li>
-                    <a
-                        className="no-style"
-                        href={`https://stackoverflow.com/users/${stackoverflowId}`}
-                    >
-                        <QuestionAnswerIcon /> Stackoverflow
                     </a>
                 </li>
             </ul>
