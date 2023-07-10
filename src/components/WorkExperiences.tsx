@@ -19,7 +19,9 @@ function WorkExperiencesComponent({
 }) {
     return (
         <div className="m-2">
-            <h2 className="font-bold text-xl text-blue">{icon} تجربه کاری:</h2>
+            <h2 className="font-bold text-xl text-blue">
+                {icon} تجربه ها کاری من:
+            </h2>
             <div>
                 {workExperiences.map((experience) => (
                     <div className="my-3">

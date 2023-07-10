@@ -1,10 +1,12 @@
 import EngineeringIcon from "@mui/icons-material/Engineering";
 import BuildCircleIcon from "@mui/icons-material/BuildCircle";
 import LightbulbCircleIcon from "@mui/icons-material/LightbulbCircle";
+import LaptopIcon from "@mui/icons-material/Laptop";
 
 import SpecialThanksComponent from "./SpecialThanks";
 import PercentageRepresentationComponent from "./PercentageRepresentation";
 import WorkExperiencesComponent, { WorkExperience } from "./WorkExperiences";
+import ProjectsComponent from "./Projects";
 
 const skills = [
     { name: "Python", percentage: 70 },
@@ -56,17 +58,47 @@ const workExperiences: WorkExperience[] = [
     },
 ];
 
+const projects = [
+    {
+        name: "مجاز آموز",
+        description: "پروژه تمرینی برای تسلط به Django",
+        links: [
+            {
+                title: "گیت هاب پروژه",
+                link: "https://github.com/Alirezaja1384/MajazAmooz/",
+            },
+        ],
+    },
+    {
+        name: "اپ سرام (Backend)",
+        description: "سامانه فروش کاشی و سرامیک",
+        links: [
+            { title: "وبسایت پروژه", link: "https://appceram.com/" },
+            {
+                title: "مستندات API پروژه",
+                link: "https://api.appceram.com/schema/redoc/",
+            },
+        ],
+    },
+    {
+        name: "سامانه نماد (Frontend)",
+        description:
+            "سامانه نظارت مردی استان یزد (پس از پایان همکاری سامانه بازنویسی شده)",
+        links: [{ title: "وبسایت پروژه", link: "https://nemad.ostanyazd.ir/" }],
+    },
+];
+
 function ResumeContentComponent() {
     return (
         <div className="flex flex-col flex-grow p-5">
             <PercentageRepresentationComponent
-                title="علاقه‌مندی ها"
+                title="علاقه‌مندی های من"
                 icon={<LightbulbCircleIcon fontSize="large" />}
                 interests={interests}
             />
 
             <PercentageRepresentationComponent
-                title="توانایی ها"
+                title="توانایی های من"
                 icon={<BuildCircleIcon fontSize="large" />}
                 interests={skills}
             />
@@ -74,6 +106,11 @@ function ResumeContentComponent() {
             <WorkExperiencesComponent
                 icon={<EngineeringIcon fontSize="large" />}
                 workExperiences={workExperiences}
+            />
+
+            <ProjectsComponent
+                icon={<LaptopIcon fontSize="large" />}
+                projects={projects}
             />
 
             <SpecialThanksComponent />
