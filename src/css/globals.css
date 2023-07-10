@@ -3,5 +3,13 @@
 :root {
     --blue: #35879a;
     --light-blue: #42a8c0;
-    --dark-blue: #001756;
+    --dark-blue: #001e6f;
+}
+
+.text-blue {
+    color: var(--blue);
+}
+
+.bg-blue {
+    background-color: var(--blue);
 }

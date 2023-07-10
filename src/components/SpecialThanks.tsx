@@ -3,7 +3,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 
 function SpecialThanksComponent() {
     return (
-        <div>
+        <div className="m-2">
             <h2 className="font-bold text-xl">تشکر ویژه:</h2>
             <div className="mr-1">
                 <ul>
