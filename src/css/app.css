@@ -1,0 +1,11 @@
+#content {
+    background-color: #ffff;
+}
+
+#sidebar {
+    background-color: var(--light-blue);
+}
+
+#profile {
+    background-color: rgba(0, 0, 0, 0.2);
+}

@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./css/app.css";
+import SidebarComponent from "./components/Sidebar";
+import ResumeContentComponent from "./components/ResumeContent";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div id="app" className="w-full">
+            <div
+                id="content"
+                className="flex flex-wrap mx-auto w-full lg:my-8 lg:w-2/3"
+            >
+                <div className="flex w-full lg:w-[30%]">
+                    <SidebarComponent />
+                </div>
+                <div className="flex w-full lg:w-[70%]">
+                    <ResumeContentComponent />
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default App;
