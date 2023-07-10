@@ -30,7 +30,7 @@ function WorkExperiencesComponent({
                                 {experience.title}
                             </h4>
                             {experience.startDate && experience.endDate && (
-                                <span className="text-gray-600">
+                                <span className="text-sm text-gray-600 lg:text-base">
                                     از{" "}
                                     {toLocalDate(experience.startDate, "short")}{" "}
                                     تا{" "}
