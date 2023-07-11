@@ -1,6 +1,7 @@
 import AppsIcon from "@mui/icons-material/Apps";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import HourglassBottomIcon from "@mui/icons-material/HourglassBottom";
+import ArticleIcon from "@mui/icons-material/Article";
 
 function SpecialThanksComponent() {
     return (
@@ -9,19 +10,40 @@ function SpecialThanksComponent() {
             <div className="mr-1">
                 <ul>
                     <li>
-                        <a href="https://github.com/sharu725/online-cv">
+                        <a
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://github.com/sharu725/online-cv"
+                        >
                             <GitHubIcon /> پروژه‌ی online-cv از sharu725
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.flaticon.com/authors/smashicons">
-                            <AppsIcon /> آیکون کاربر طراحی شده توسط Smashicons -
+                        <a
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://www.flaticon.com/authors/smashicons"
+                        >
+                            <AppsIcon /> آیکون کاربر از توسط Smashicons -
                             Flaticon
                         </a>
                     </li>
                     <li>
-                        <a href="https://loading.io/">
+                        <a
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://loading.io/"
+                        >
                             <HourglassBottomIcon /> آیکون بارگذاری از loading.io
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://icons8.com/icon/115648/resume"
+                        >
+                            <ArticleIcon /> آیکون رزومه از Icons8
                         </a>
                     </li>
                 </ul>
