@@ -1,4 +1,6 @@
 import React from "react";
+import LaunchIcon from "@mui/icons-material/Launch";
+
 import { toLocalDate } from "../utils/date";
 import { WorkExperience } from "../types";
 
@@ -41,6 +43,7 @@ function WorkExperiencesComponent({
                                             className="no-style"
                                             href={experience.companyWebsite}
                                         >
+                                            <LaunchIcon fontSize="small" />{" "}
                                             وبسایت شرکت
                                         </a>
                                     </>

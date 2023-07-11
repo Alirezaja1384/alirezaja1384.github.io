@@ -1,4 +1,6 @@
 import React from "react";
+import LaunchIcon from "@mui/icons-material/Launch";
+
 import { Project } from "../types";
 
 function ProjectsComponent({
@@ -39,7 +41,10 @@ function ProjectsComponent({
                                 <ul>
                                     {project.links.map((lnk) => (
                                         <li key={lnk.title}>
-                                            <a href={lnk.link}>{lnk.title}</a>
+                                            <a href={lnk.link}>
+                                                <LaunchIcon fontSize="small" />{" "}
+                                                {lnk.title}
+                                            </a>
                                         </li>
                                     ))}
                                 </ul>
