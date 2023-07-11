@@ -23,6 +23,10 @@ function App() {
             });
     }, []);
 
+    useEffect(() => {
+        if (resume) document.title = `رزومه‌ی من | ${resume.about.fullName}`;
+    }, [resume]);
+
     return (
         <div id="app" className="w-full">
             <div

@@ -9,18 +9,12 @@ function SpecialThanksComponent() {
             <div className="mr-1">
                 <ul>
                     <li>
-                        <a
-                            href="https://github.com/sharu725/online-cv"
-                            title="user icons"
-                        >
+                        <a href="https://github.com/sharu725/online-cv">
                             <GitHubIcon /> پروژه‌ی online-cv از sharu725
                         </a>
                     </li>
                     <li>
-                        <a
-                            href="https://www.flaticon.com/authors/smashicons"
-                            title="user icons"
-                        >
+                        <a href="https://www.flaticon.com/authors/smashicons">
                             <AppsIcon /> آیکون کاربر طراحی شده توسط Smashicons -
                             Flaticon
                         </a>

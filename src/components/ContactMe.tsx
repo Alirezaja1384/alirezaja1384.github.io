@@ -3,14 +3,7 @@ import EmailIcon from "@mui/icons-material/AlternateEmail";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-
-export interface ContactMeComponentProps {
-    cellphoneNumber: string;
-    emailAddress: string;
-    linkedinUsername: string;
-    telegramUsername: string;
-    githubUsername: string;
-}
+import { ContactInfo } from "../types";
 
 function ContactMeComponent({
     cellphoneNumber,
@@ -18,7 +11,7 @@ function ContactMeComponent({
     linkedinUsername,
     telegramUsername,
     githubUsername,
-}: ContactMeComponentProps) {
+}: ContactInfo) {
     return (
         <div className="w-full px-4 py-2">
             <h4 className="text-lg font-bold">تماس با من</h4>
