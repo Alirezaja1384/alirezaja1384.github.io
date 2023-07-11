@@ -1,14 +1,6 @@
 import React from "react";
 import { toLocalDate } from "../utils/date";
-
-export interface WorkExperience {
-    title: string;
-    description: string;
-    companyName: string | null;
-    companyWebsite: string | null;
-    startDate: string;
-    endDate: string;
-}
+import { WorkExperience } from "../types";
 
 function WorkExperiencesComponent({
     icon,
@@ -24,7 +16,7 @@ function WorkExperiencesComponent({
             </h2>
             <div>
                 {workExperiences.map((experience) => (
-                    <div className="my-3">
+                    <div key={experience.title} className="my-3">
                         <div className="flex flex-wrap justify-between">
                             <h4 className="font-bold text-lg">
                                 {experience.title}

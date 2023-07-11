@@ -1,18 +1,12 @@
 import React from "react";
 import { toLocalDate } from "../utils/date";
 import { formatDigits } from "../utils/text";
+import { AboutMe, JobStatus } from "../types";
 
-export enum JobStatus {
-    LOOKING_FOR_JOB = "looking_for_job",
-    EMPLOYED = "employed",
-    FREELANCING = "freelancing",
-}
-
-export interface MoreAboutMeComponentProps {
-    age?: number;
-    birthDate: string;
-    jobStatus: JobStatus;
-}
+type MoreAboutMeComponentProps = Pick<
+    AboutMe,
+    "age" | "birthDate" | "jobStatus"
+>;
 
 const jobStatusMap: { [key in JobStatus]: React.ReactElement } = {
     looking_for_job: <span className="font-bold">در جستجوی کارم</span>,

@@ -1,28 +1,28 @@
 import ProfileComponent from "./Profile";
 import ContactMeComponent from "./ContactMe";
-import MoreAboutMeComponent, { JobStatus } from "./MyInfo";
+import MoreAboutMeComponent from "./MoreAboutMe";
+import { Resume } from "../types";
 
-function SidebarComponent() {
+function SidebarComponent({
+    about,
+    contactInfo,
+}: Pick<Resume, "about" | "contactInfo">) {
     return (
         <div id="sidebar" className="flex flex-col flex-grow text-white">
             <ProfileComponent
-                fullName="علیرضا جعفری"
-                jobTitle="توسعه دهنده وب"
-                imageUrl={null}
+                fullName={about.fullName}
+                jobTitle={about.jobTitle}
+                imageUrl={about.imageUrl}
             />
+
             <div className="py-5 lg:py-2">
                 <MoreAboutMeComponent
-                    age={18}
-                    birthDate="2005-08-16"
-                    jobStatus={JobStatus.LOOKING_FOR_JOB}
+                    age={about.age}
+                    birthDate={about.birthDate}
+                    jobStatus={about.jobStatus}
                 />
-                <ContactMeComponent
-                    cellphoneNumber="+989386288279"
-                    emailAddress="alirezaja1384@gmail.com"
-                    linkedinUsername="alirezaja1384"
-                    telegramUsername="alirezaja1384"
-                    githubUsername="alirezaja1384"
-                />
+
+                <ContactMeComponent {...contactInfo} />
             </div>
         </div>
     );

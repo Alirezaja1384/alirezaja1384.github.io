@@ -1,10 +1,6 @@
 import React from "react";
 import ProgressBar from "@ramonak/react-progress-bar";
-
-export interface NamePercentage {
-    name: string;
-    percentage: number;
-}
+import { NamePercentage } from "../types";
 
 function PercentageRepresentationComponent({
     title,
@@ -25,7 +21,7 @@ function PercentageRepresentationComponent({
                 className="grid gap-2 grid-cols-1 text-left lg:grid-cols-2"
             >
                 {interests.map((interest) => (
-                    <div className="w-full">
+                    <div key={interest.name} className="w-full">
                         {interest.name}
                         <ProgressBar
                             bgColor="var(--blue)"

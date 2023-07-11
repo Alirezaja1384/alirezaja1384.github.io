@@ -1,13 +1,5 @@
 import React from "react";
-
-export interface Project {
-    name: string;
-    description: string;
-    links: {
-        title: string;
-        link: string;
-    }[];
-}
+import { Project } from "../types";
 
 function ProjectsComponent({
     icon,
@@ -23,7 +15,10 @@ function ProjectsComponent({
             </h2>
             <div>
                 {projects.map((project) => (
-                    <div className="flex flex-wrap justify-between my-3">
+                    <div
+                        key={project.name}
+                        className="flex flex-wrap justify-between my-3"
+                    >
                         <div
                             className={`w-full pl-2 ${
                                 project.links ? "lg:w-3/4" : ""
@@ -43,7 +38,7 @@ function ProjectsComponent({
                                 </h4>
                                 <ul>
                                     {project.links.map((lnk) => (
-                                        <li>
+                                        <li key={lnk.title}>
                                             <a href={lnk.link}>{lnk.title}</a>
                                         </li>
                                     ))}
