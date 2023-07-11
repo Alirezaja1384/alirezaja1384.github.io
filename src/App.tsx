@@ -1,11 +1,13 @@
+import axios from "axios";
+import applyCaseMiddleware from "axios-case-converter";
+import { useEffect, useState } from "react";
+
 import "./css/app.css";
+import LoadingSVG from "./images/loading.svg";
 import SidebarComponent from "./components/Sidebar";
 import ResumeContentComponent from "./components/ResumeContent";
-import { useEffect, useState } from "react";
-import axios from "axios";
 import { concatUrl } from "./utils/url";
 import { API_ROUTES, API_URL } from "./config";
-import applyCaseMiddleware from "axios-case-converter";
 import { Resume } from "./types";
 
 const client = applyCaseMiddleware(axios.create());
@@ -46,8 +48,12 @@ function App() {
                         </div>
                     </>
                 ) : (
-                    <div className="w-full text-center">
-                        <p>Loading</p>
+                    <div className="flex justify-center w-full">
+                        <img
+                            src={LoadingSVG}
+                            className="w-[75px]"
+                            alt="درحال بارگذاری"
+                        />
                     </div>
                 )}
             </div>
