@@ -17,7 +17,10 @@ function WorkExperiencesComponent({
             </h2>
             <div>
                 {workExperiences.map((experience) => (
-                    <WorkExperienceComponent experience={experience} />
+                    <WorkExperienceComponent
+                        key={experience.title}
+                        experience={experience}
+                    />
                 ))}
             </div>
         </div>
@@ -30,7 +33,7 @@ function WorkExperienceComponent({
     experience: WorkExperience;
 }) {
     return (
-        <div key={experience.title} className="my-3">
+        <div className="my-3">
             <div className="flex flex-wrap items-center justify-between">
                 <div>
                     <h4 className="font-bold text-lg">{experience.title}</h4>

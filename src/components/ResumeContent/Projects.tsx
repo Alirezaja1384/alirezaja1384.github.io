@@ -15,7 +15,7 @@ function ProjectsComponent({
             </h2>
             <div>
                 {projects.map((project) => (
-                    <ProjectComponent project={project} />
+                    <ProjectComponent key={project.name} project={project} />
                 ))}
             </div>
         </div>
@@ -24,7 +24,7 @@ function ProjectsComponent({
 
 function ProjectComponent({ project }: { project: Project }) {
     return (
-        <div key={project.name} className="flex flex-wrap justify-between my-3">
+        <div className="flex flex-wrap justify-between my-3">
             <div className={`w-full pl-2 ${project.links ? "lg:w-3/4" : ""}`}>
                 <h4 className="font-bold text-lg">{project.name}</h4>
                 <p className="mr-2 text-gray-600">{project.description}</p>
