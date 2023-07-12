@@ -12,7 +12,7 @@ function ContactMeComponent({
     githubUsername,
 }: ContactInfo) {
     return (
-        <div className="w-full px-4 py-2">
+        <div className="w-full px-4 py-1">
             <h4 className="text-lg font-bold">تماس با من</h4>
             <ul style={{ direction: "ltr" }} className="text-left m-1">
                 <li>

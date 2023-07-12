@@ -35,16 +35,12 @@ function WorkExperienceComponent({
     return (
         <div className="my-3">
             <div className="flex flex-wrap items-center justify-between">
-                <div>
-                    <h4 className="font-bold text-lg">{experience.title}</h4>
-                </div>
+                <h4 className="font-bold text-lg ml-2">{experience.title}</h4>
                 {experience.startDate && experience.endDate && (
-                    <div className="mr-2">
-                        <span className="badge bg-gray-100 text-gray-600 text-sm lg:text-base">
-                            از {toLocalDate(experience.startDate, "short")} تا{" "}
-                            {toLocalDate(experience.endDate, "short")}
-                        </span>
-                    </div>
+                    <span className="badge bg-gray-100 text-gray-600 text-sm md:text-base">
+                        از {toLocalDate(experience.startDate, "short")} تا{" "}
+                        {toLocalDate(experience.endDate, "short")}
+                    </span>
                 )}
             </div>
             <div className="mr-2">

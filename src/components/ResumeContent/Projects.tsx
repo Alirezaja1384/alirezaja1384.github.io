@@ -25,7 +25,7 @@ function ProjectsComponent({
 function ProjectComponent({ project }: { project: Project }) {
     return (
         <div className="flex flex-wrap justify-between my-3">
-            <div className={`w-full pl-2 ${project.links ? "lg:w-3/4" : ""}`}>
+            <div className={`w-full pl-2 ${project.links ? "md:w-3/4" : ""}`}>
                 <h4 className="font-bold text-lg">{project.name}</h4>
                 <p className="mr-2 text-gray-600">{project.description}</p>
             </div>
@@ -36,7 +36,7 @@ function ProjectComponent({ project }: { project: Project }) {
 
 function ProjectLinksComponent({ links }: { links: Project["links"] }) {
     return (
-        <div className="pr-2 w-full lg:w-1/4">
+        <div className="pr-2 w-full md:w-1/4">
             <h4 className="text-gray-700 font-bold">پیوندها</h4>
             <ul>
                 {links.map((lnk) => (

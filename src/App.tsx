@@ -29,11 +29,8 @@ function App() {
     }, [resume]);
 
     return (
-        <div id="app" className="w-full">
-            <div
-                id="content"
-                className="flex flex-wrap mx-auto w-full lg:my-8 lg:w-2/3"
-            >
+        <div id="app">
+            <div id="content">
                 {resume ? (
                     <ResumeComponent resume={resume} />
                 ) : (

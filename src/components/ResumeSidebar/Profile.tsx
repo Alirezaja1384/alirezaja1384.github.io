@@ -12,7 +12,7 @@ function ProfileComponent({
     imageUrl,
 }: ProfileComponentProps) {
     return (
-        <div id="profile" className="flex flex-col items-center w-full -6 py-8">
+        <div id="profile">
             <img
                 src={imageUrl || DefaultProfile}
                 className="w-1/3"

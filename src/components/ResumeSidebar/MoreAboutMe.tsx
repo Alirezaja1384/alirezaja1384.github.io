@@ -18,7 +18,7 @@ function MoreAboutMeComponent({
     jobStatus,
 }: MoreAboutMeComponentProps) {
     return (
-        <div className="w-full px-4 pt-2">
+        <div className="w-full px-4 py-1">
             <h4 className="text-lg font-bold">درباره من</h4>
             <ul className="m-1">
                 <li>
