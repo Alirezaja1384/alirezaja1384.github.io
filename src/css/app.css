@@ -22,6 +22,16 @@
     background-color: rgba(0, 0, 0, 0.2);
 }
 
+@media screen(md) {
+    #content {
+        flex-wrap: nowrap;
+    }
+
+    #sidebar {
+        width: 320px;
+    }
+}
+
 @media screen(lg) {
     #content {
         width: 67%;
