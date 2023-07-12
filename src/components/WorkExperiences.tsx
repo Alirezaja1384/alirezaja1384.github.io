@@ -32,13 +32,17 @@ function WorkExperienceComponent({
 }) {
     return (
         <div key={experience.title} className="my-3">
-            <div className="flex flex-wrap justify-between">
-                <h4 className="font-bold text-lg">{experience.title}</h4>
+            <div className="flex flex-wrap items-center justify-between">
+                <div>
+                    <h4 className="font-bold text-lg">{experience.title}</h4>
+                </div>
                 {experience.startDate && experience.endDate && (
-                    <span className="inline-flex items-center text-sm text-gray-600 mr-2 lg:text-base">
-                        از {toLocalDate(experience.startDate, "short")} تا{" "}
-                        {toLocalDate(experience.endDate, "short")}
-                    </span>
+                    <div className="mr-2">
+                        <span className="badge bg-gray-100 text-gray-600 text-sm lg:text-base">
+                            از {toLocalDate(experience.startDate, "short")} تا{" "}
+                            {toLocalDate(experience.endDate, "short")}
+                        </span>
+                    </div>
                 )}
             </div>
             <div className="mr-2">
