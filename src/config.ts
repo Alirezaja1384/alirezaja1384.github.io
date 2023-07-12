@@ -1,5 +1,2 @@
-export const API_URL = "https://alirezaja1384-resume-api.iran.liara.run";
-
-export const API_ROUTES = {
-    resume: "/resume",
-};
+export const RESUME_DATA_URL =
+    "https://alirezajafari-fs.iran.liara.run/resume.json";

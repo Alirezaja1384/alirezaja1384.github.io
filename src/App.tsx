@@ -6,8 +6,7 @@ import "./css/app.css";
 import ResumeComponent from "src/components/Resume";
 import LoadingComponent from "src/components/Loading";
 
-import { concatUrl } from "src/utils";
-import { API_ROUTES, API_URL } from "src/config";
+import { RESUME_DATA_URL } from "src/config";
 
 const client = applyCaseMiddleware(axios.create());
 
@@ -15,11 +14,9 @@ function App() {
     const [resume, setResume] = useState<Resume | null>(null);
 
     const fetchResume = () => {
-        client
-            .get<Resume>(concatUrl(API_URL, API_ROUTES.resume))
-            .then((response) => {
-                setResume(response.data);
-            });
+        client.get<Resume>(RESUME_DATA_URL).then((response) => {
+            setResume(response.data);
+        });
     };
 
     useEffect(fetchResume, []);
