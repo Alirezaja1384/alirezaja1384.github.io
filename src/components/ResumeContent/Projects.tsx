@@ -1,8 +1,6 @@
 import React from "react";
 import LaunchIcon from "@mui/icons-material/Launch";
 
-import { Project } from "../types";
-
 function ProjectsComponent({
     icon,
     projects,

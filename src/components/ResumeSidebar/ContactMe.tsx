@@ -3,7 +3,6 @@ import EmailIcon from "@mui/icons-material/AlternateEmail";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import { ContactInfo } from "../types";
 
 function ContactMeComponent({
     cellphoneNumber,

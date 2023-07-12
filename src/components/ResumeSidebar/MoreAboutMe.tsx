@@ -1,7 +1,5 @@
 import React from "react";
-import { toLocalDate } from "../utils/date";
-import { formatDigits } from "../utils/text";
-import { AboutMe, JobStatus } from "../types";
+import { toLocalDate, formatDigits } from "src/utils";
 
 type MoreAboutMeComponentProps = Pick<
     AboutMe,

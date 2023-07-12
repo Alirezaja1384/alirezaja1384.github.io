@@ -1,8 +1,7 @@
 import React from "react";
 import LaunchIcon from "@mui/icons-material/Launch";
 
-import { toLocalDate } from "../utils/date";
-import { WorkExperience } from "../types";
+import { toLocalDate } from "src/utils";
 
 function WorkExperiencesComponent({
     icon,

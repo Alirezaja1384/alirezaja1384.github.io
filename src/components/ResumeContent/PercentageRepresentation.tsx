@@ -1,6 +1,5 @@
 import React from "react";
 import ProgressBar from "@ramonak/react-progress-bar";
-import { NamePercentage } from "../types";
 
 function PercentageRepresentationComponent({
     title,

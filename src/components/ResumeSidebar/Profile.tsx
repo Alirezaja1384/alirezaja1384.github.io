@@ -1,4 +1,4 @@
-import DefaultProfile from "../images/user.png";
+import DefaultProfile from "src/images/user.png";
 
 export interface ProfileComponentProps {
     fullName: string;

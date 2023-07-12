@@ -3,11 +3,10 @@ import BuildCircleIcon from "@mui/icons-material/BuildCircle";
 import LightbulbCircleIcon from "@mui/icons-material/LightbulbCircle";
 import LaptopIcon from "@mui/icons-material/Laptop";
 
-import SpecialThanksComponent from "./SpecialThanks";
-import PercentageRepresentationComponent from "./PercentageRepresentation";
-import WorkExperiencesComponent from "./WorkExperiences";
 import ProjectsComponent from "./Projects";
-import { Resume } from "../types";
+import SpecialThanksComponent from "./SpecialThanks";
+import WorkExperiencesComponent from "./WorkExperiences";
+import PercentageRepresentationComponent from "./PercentageRepresentation";
 
 function ResumeContentComponent({
     interests,

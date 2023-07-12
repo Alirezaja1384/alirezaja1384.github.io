@@ -1,10 +1,10 @@
-export enum JobStatus {
+enum JobStatus {
     LOOKING_FOR_JOB = "looking_for_job",
     EMPLOYED = "employed",
     FREELANCING = "freelancing",
 }
 
-export interface AboutMe {
+interface AboutMe {
     fullName: string;
     jobTitle: string;
     imageUrl: string | null;
@@ -13,7 +13,7 @@ export interface AboutMe {
     jobStatus: JobStatus;
 }
 
-export interface ContactInfo {
+interface ContactInfo {
     cellphoneNumber: string;
     emailAddress: string;
     linkedinUsername: string;
@@ -21,12 +21,12 @@ export interface ContactInfo {
     githubUsername: string;
 }
 
-export interface NamePercentage {
+interface NamePercentage {
     name: string;
     percentage: number;
 }
 
-export interface Project {
+interface Project {
     name: string;
     description: string;
     links: {
@@ -35,7 +35,7 @@ export interface Project {
     }[];
 }
 
-export interface WorkExperience {
+interface WorkExperience {
     title: string;
     description: string;
     companyName: string | null;
@@ -44,7 +44,7 @@ export interface WorkExperience {
     endDate: string;
 }
 
-export interface Resume {
+interface Resume {
     about: AboutMe;
     contactInfo: ContactInfo;
     skills: NamePercentage[];

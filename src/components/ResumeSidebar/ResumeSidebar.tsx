@@ -1,9 +1,8 @@
 import ProfileComponent from "./Profile";
 import ContactMeComponent from "./ContactMe";
 import MoreAboutMeComponent from "./MoreAboutMe";
-import { Resume } from "../types";
 
-function SidebarComponent({
+function ResumeSidebarComponent({
     about,
     contactInfo,
 }: Pick<Resume, "about" | "contactInfo">) {
@@ -28,4 +27,4 @@ function SidebarComponent({
     );
 }
 
-export default SidebarComponent;
+export default ResumeSidebarComponent;
