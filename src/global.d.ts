@@ -8,7 +8,6 @@ interface AboutMe {
     fullName: string;
     jobTitle: string;
     imageUrl: string | null;
-    age?: number;
     birthDate: string;
     jobStatus: JobStatus;
 }

@@ -17,4 +17,7 @@ const toLocalDate = (date: string, type: "short" | "long" = "long"): string =>
         "persian"
     );
 
-export { toLocalDate };
+const calculateAge = (date: string): number =>
+    dayjs(Date()).diff(dayjs(date), "year");
+
+export { toLocalDate, calculateAge };

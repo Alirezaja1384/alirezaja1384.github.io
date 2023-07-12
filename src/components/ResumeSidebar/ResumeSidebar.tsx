@@ -1,6 +1,7 @@
 import ProfileComponent from "./Profile";
 import ContactMeComponent from "./ContactMe";
 import MoreAboutMeComponent from "./MoreAboutMe";
+
 function ResumeSidebarComponent({
     about,
     contactInfo,
@@ -15,7 +16,6 @@ function ResumeSidebarComponent({
 
             <div className="py-5 md:py-2">
                 <MoreAboutMeComponent
-                    age={about.age}
                     birthDate={about.birthDate}
                     jobStatus={about.jobStatus}
                 />

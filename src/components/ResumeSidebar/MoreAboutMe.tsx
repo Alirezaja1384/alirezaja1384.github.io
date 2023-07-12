@@ -1,10 +1,7 @@
 import React from "react";
-import { toLocalDate, formatDigits } from "src/utils";
+import { toLocalDate, formatDigits, calculateAge } from "src/utils";
 
-type MoreAboutMeComponentProps = Pick<
-    AboutMe,
-    "age" | "birthDate" | "jobStatus"
->;
+type MoreAboutMeComponentProps = Pick<AboutMe, "birthDate" | "jobStatus">;
 
 const jobStatusMap: { [key in JobStatus]: React.ReactElement } = {
     looking_for_job: <span className="font-bold">در جستجوی کارم</span>,
@@ -13,7 +10,6 @@ const jobStatusMap: { [key in JobStatus]: React.ReactElement } = {
 };
 
 function MoreAboutMeComponent({
-    age,
     birthDate,
     jobStatus,
 }: MoreAboutMeComponentProps) {
@@ -22,8 +18,8 @@ function MoreAboutMeComponent({
             <h4 className="text-lg font-bold">درباره من</h4>
             <ul className="m-1">
                 <li>
-                    متولد {toLocalDate(birthDate, "short")}
-                    {age && formatDigits(` (${age} سال)`)}
+                    متولد {toLocalDate(birthDate, "short")}{" "}
+                    {formatDigits(` (${calculateAge(birthDate)} سال)`)}
                 </li>
                 <li>در حال حاضر {jobStatusMap[jobStatus]}</li>
             </ul>
