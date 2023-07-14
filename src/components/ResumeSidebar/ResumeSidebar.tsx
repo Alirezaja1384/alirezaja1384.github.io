@@ -1,6 +1,7 @@
 import ProfileComponent from "./Profile";
 import ContactMeComponent from "./ContactMe";
 import MoreAboutMeComponent from "./MoreAboutMe";
+import EtceteraComponent from "./Etcetera";
 
 function ResumeSidebarComponent({
     about,
@@ -14,13 +15,15 @@ function ResumeSidebarComponent({
                 imageUrl={about.imageUrl}
             />
 
-            <div className="py-5 md:py-2">
+            <div id="sidebar-content" className="py-5 md:py-2">
                 <MoreAboutMeComponent
                     birthDate={about.birthDate}
                     jobStatus={about.jobStatus}
                 />
 
                 <ContactMeComponent {...contactInfo} />
+
+                <EtceteraComponent />
             </div>
         </div>
     );

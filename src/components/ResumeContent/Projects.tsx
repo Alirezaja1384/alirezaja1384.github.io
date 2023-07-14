@@ -9,7 +9,7 @@ function ProjectsComponent({
     projects: Project[];
 }) {
     return (
-        <div className="m-2">
+        <div className="m-2 print:break-inside-avoid">
             <h2 className="font-bold text-xl text-blue">
                 {icon} پروژه های من:
             </h2>

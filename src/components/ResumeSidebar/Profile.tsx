@@ -12,7 +12,7 @@ function ProfileComponent({
     imageUrl,
 }: ProfileComponentProps) {
     return (
-        <div id="profile">
+        <div id="sidebar-profile">
             <img
                 src={imageUrl || DefaultProfile}
                 className="w-1/3"

@@ -1,0 +1,28 @@
+@media print {
+    body {
+        /* Tell browsers to print background colors */
+        color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    #sidebar {
+        flex-direction: row;
+    }
+
+    #sidebar-profile {
+        width: 300px;
+    }
+
+    #sidebar-content {
+        flex-grow: 1;
+    }
+
+    #sidebar-etcetera {
+        display: none;
+    }
+}
+
+@page {
+    /* Remove browser default header (title) and footer (url) */
+    margin: 0;
+}

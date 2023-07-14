@@ -17,7 +17,7 @@ function PercentageRepresentationComponent({
             </h2>
             <div
                 style={{ direction: "ltr" }}
-                className="grid gap-2 grid-cols-1 text-left lg:grid-cols-2"
+                className="grid gap-2 grid-cols-1 text-left lg:grid-cols-2 print:grid-cols-2"
             >
                 {interests.map((interest) => (
                     <div key={interest.name} className="w-full">
