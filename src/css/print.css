@@ -5,6 +5,11 @@
         -webkit-print-color-adjust: exact;
     }
 
+    a[href^="https://"]::after
+    {
+        content: " [" attr(href) "]";
+    }
+
     #sidebar {
         flex-direction: row;
     }
