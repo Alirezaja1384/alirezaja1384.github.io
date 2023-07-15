@@ -50,4 +50,5 @@ interface Resume {
     interests: NamePercentage[];
     projects: Project[];
     workExperiences: WorkExperience[];
+    pdfLink?: string;
 }

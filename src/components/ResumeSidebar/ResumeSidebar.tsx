@@ -6,7 +6,8 @@ import EtceteraComponent from "./Etcetera";
 function ResumeSidebarComponent({
     about,
     contactInfo,
-}: Pick<Resume, "about" | "contactInfo">) {
+    pdfLink,
+}: Pick<Resume, "about" | "contactInfo" | "pdfLink">) {
     return (
         <div id="sidebar">
             <ProfileComponent
@@ -23,7 +24,7 @@ function ResumeSidebarComponent({
 
                 <ContactMeComponent {...contactInfo} />
 
-                <EtceteraComponent />
+                <EtceteraComponent pdfLink={pdfLink} />
             </div>
         </div>
     );

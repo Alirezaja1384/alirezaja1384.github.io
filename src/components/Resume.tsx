@@ -8,6 +8,7 @@ function ResumeComponent({ resume }: { resume: Resume }) {
                 <ResumeSidebarComponent
                     about={resume.about}
                     contactInfo={resume.contactInfo}
+                    pdfLink={resume.pdfLink}
                 />
             </div>
 

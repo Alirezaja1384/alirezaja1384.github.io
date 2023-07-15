@@ -24,10 +24,6 @@
     #sidebar-content {
         flex-grow: 1;
     }
-
-    #sidebar-etcetera {
-        display: none;
-    }
 }
 
 @page {

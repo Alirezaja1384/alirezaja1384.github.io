@@ -19,4 +19,9 @@ body {
     a:not(.no-style):hover {
         color: var(--dark-blue);
     }
+
+    ul li {
+        margin-top: 0.15rem;
+        margin-bottom: 0.15rem;
+    }
 }
