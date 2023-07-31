@@ -18,12 +18,6 @@ const specialThanks: {
         href: "https://github.com/sharu725/online-cv",
     },
     {
-        id: "free-dns",
-        text: "پروژه‌ی FreeDNS از Joshua Anderson",
-        icon: <LanguageIcon />,
-        href: "https://freedns.afraid.org/",
-    },
-    {
         id: "user-icon",
         text: "آیکون کاربر از Smashicons - Flaticon",
         icon: <AppsIcon />,
