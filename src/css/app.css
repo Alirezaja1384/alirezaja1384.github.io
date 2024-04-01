@@ -37,6 +37,32 @@
     #content {
         width: 67%;
         min-width: 900px;
+        max-width: 1200px;
         margin: 2rem auto;
     }
+}
+
+.text-blue {
+    color: var(--blue);
+}
+
+.bg-blue {
+    background-color: var(--blue);
+}
+
+.bg-light-blue {
+    background-color: var(--light-blue);
+}
+
+.badge {
+    border: none;
+    margin: 0.15rem;
+    padding: 2px 8px;
+    border-radius: 7px;
+    cursor: default;
+}
+
+.badge-gray {
+    background-color: rgb(243, 244, 246);
+    color: rgb(75 85 99);
 }

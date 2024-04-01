@@ -1,30 +1,45 @@
-import ProfileComponent from "./Profile";
+import UserInfoComponent from "./UserInfo";
 import ContactMeComponent from "./ContactMe";
 import MoreAboutMeComponent from "./MoreAboutMe";
 import EtceteraComponent from "./Etcetera";
+import { User } from "src/types/user";
+import { EmploymentStatus } from "src/types/resumeProfile";
+import CopyrightComponent from "./Copyright";
 
 function ResumeSidebarComponent({
-    about,
-    contactInfo,
-    pdfLink,
-}: Pick<Resume, "about" | "contactInfo" | "pdfLink">) {
+    user,
+    introduction,
+    jobTitle,
+    employmentStatus,
+}: {
+    user: User;
+    introduction: string | null;
+    jobTitle: string;
+    employmentStatus: EmploymentStatus;
+}) {
     return (
         <div id="sidebar">
-            <ProfileComponent
-                fullName={about.fullName}
-                jobTitle={about.jobTitle}
-                imageUrl={about.imageUrl}
-            />
+            <UserInfoComponent user={user} jobTitle={jobTitle} />
 
-            <div id="sidebar-content" className="py-5 md:py-2">
-                <MoreAboutMeComponent
-                    birthDate={about.birthDate}
-                    jobStatus={about.jobStatus}
-                />
+            <div className="flex flex-col justify-between h-full py-5 md:py-2 px-4">
+                <div>
+                    {introduction && (
+                        <div className="w-full py-1">
+                            <p className="text-center mx-2">{introduction}</p>
+                        </div>
+                    )}
 
-                <ContactMeComponent {...contactInfo} />
+                    <MoreAboutMeComponent
+                        birthDate={user.birthDate || undefined}
+                        employmentStatus={employmentStatus}
+                    />
 
-                <EtceteraComponent pdfLink={pdfLink} />
+                    <ContactMeComponent contactInfo={user.contactInfo} />
+
+                    <EtceteraComponent />
+                </div>
+
+                <CopyrightComponent />
             </div>
         </div>
     );

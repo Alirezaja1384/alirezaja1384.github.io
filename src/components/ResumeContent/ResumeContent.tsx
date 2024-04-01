@@ -4,41 +4,50 @@ import LightbulbCircleIcon from "@mui/icons-material/LightbulbCircle";
 import LaptopIcon from "@mui/icons-material/Laptop";
 
 import ProjectsComponent from "./Projects";
-import SpecialThanksComponent from "./SpecialThanks";
 import WorkExperiencesComponent from "./WorkExperiences";
-import PercentageRepresentationComponent from "./PercentageRepresentation";
+import LevelRepresentationComponent from "./LevelRepresentation";
+import { ResumeProfile } from "src/types/resumeProfile";
+import { NoBreak } from "../utils";
+import AboutMeComponent from "./AboutMe";
 
 function ResumeContentComponent({
+    aboutMe,
     interests,
     skills,
     projects,
     workExperiences,
-}: Pick<Resume, "interests" | "skills" | "projects" | "workExperiences">) {
+}: Pick<
+    ResumeProfile,
+    "aboutMe" | "interests" | "skills" | "projects" | "workExperiences"
+>) {
     return (
         <div className="flex flex-col flex-grow p-5">
-            <PercentageRepresentationComponent
-                title="علاقه‌مندی های من"
-                icon={<LightbulbCircleIcon fontSize="large" />}
-                interests={interests}
-            />
+            <AboutMeComponent aboutMe={aboutMe} />
 
-            <PercentageRepresentationComponent
-                title="توانایی های من"
-                icon={<BuildCircleIcon fontSize="large" />}
-                interests={skills}
-            />
+            <NoBreak>
+                <LevelRepresentationComponent
+                    title="علاقه‌مندی های من"
+                    icon={<LightbulbCircleIcon fontSize="large" />}
+                    levels={interests}
+                />
+            </NoBreak>
+
+            <NoBreak>
+                <LevelRepresentationComponent
+                    title="توانایی های من"
+                    icon={<BuildCircleIcon fontSize="large" />}
+                    levels={skills}
+                />
+            </NoBreak>
 
             <WorkExperiencesComponent
                 icon={<EngineeringIcon fontSize="large" />}
                 workExperiences={workExperiences}
             />
-
             <ProjectsComponent
                 icon={<LaptopIcon fontSize="large" />}
                 projects={projects}
             />
-
-            <SpecialThanksComponent />
         </div>
     );
 }

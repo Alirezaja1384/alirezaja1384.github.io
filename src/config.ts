@@ -1,2 +1,2 @@
 export const RESUME_DATA_URL =
-    "https://alirezajafari.storage.iran.liara.space/resume.json";
+    "https://alirezaja1384-resume-api.liara.run/v1/resume/profile/";

@@ -1,4 +1,5 @@
 import DefaultProfile from "src/images/user.png";
+import { User } from "src/types/user";
 
 export interface ProfileComponentProps {
     fullName: string;
@@ -6,24 +7,26 @@ export interface ProfileComponentProps {
     imageUrl: string | null;
 }
 
-function ProfileComponent({
-    fullName,
+function UserInfoComponent({
+    user,
     jobTitle,
-    imageUrl,
-}: ProfileComponentProps) {
+}: {
+    user: User;
+    jobTitle: string;
+}) {
     return (
         <div id="sidebar-profile">
             <img
-                src={imageUrl || DefaultProfile}
-                className="w-1/3"
+                src={user.profileImage || DefaultProfile}
+                className="w-2/5 rounded-full"
                 alt="تصویر پروفایل"
             />
             <div className="text-center mt-3">
-                <h3 className="text-3xl font-bold">{fullName}</h3>
+                <h3 className="text-3xl font-bold">{user.fullName}</h3>
                 <h6 className="text-gray-300">{jobTitle}</h6>
             </div>
         </div>
     );
 }
 
-export default ProfileComponent;
+export default UserInfoComponent;

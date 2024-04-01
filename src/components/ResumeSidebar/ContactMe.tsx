@@ -3,52 +3,59 @@ import EmailIcon from "@mui/icons-material/AlternateEmail";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { ContactInfo, ContactInfoType } from "src/types/contactInfo";
 
-function ContactMeComponent({
-    cellphoneNumber,
-    emailAddress,
-    linkedinUsername,
-    telegramUsername,
-    githubUsername,
-}: ContactInfo) {
+const CONTACT_INFO_TYPE_ICON: Record<ContactInfoType, typeof CallIcon> = {
+    cellphone: CallIcon,
+    email: EmailIcon,
+    github: GitHubIcon,
+    linkedin: LinkedInIcon,
+    telegram: TelegramIcon,
+};
+
+function contactInfoHref(cInfo: ContactInfo): string {
+    const val = cInfo.value[0] === "@" ? cInfo.value.substring(1) : cInfo.value;
+    switch (cInfo.type) {
+        case "cellphone":
+            return `tel:${val}`;
+        case "email":
+            return `mailto:${val}`;
+        case "linkedin":
+            return `https://www.linkedin.com/in/${val}`;
+        case "telegram":
+            return `https://t.me/${val}`;
+        case "github":
+            return `https://github.com/${val}`;
+    }
+}
+
+function ContactInfoItem({ cInfo }: { cInfo: ContactInfo }) {
+    const Icon = CONTACT_INFO_TYPE_ICON[cInfo.type];
     return (
-        <div className="w-full px-4 py-1">
+        <li>
+            <a
+                target="_blank"
+                rel="noreferrer"
+                className="no-style"
+                href={contactInfoHref(cInfo)}
+            >
+                <Icon /> {cInfo.value}
+            </a>
+        </li>
+    );
+}
+
+function ContactMeComponent({ contactInfo }: { contactInfo: ContactInfo[] }) {
+    return (
+        <div className="w-full py-1">
             <h4 className="text-lg font-bold">تماس با من</h4>
             <ul style={{ direction: "ltr" }} className="text-left m-1">
-                <li>
-                    <a className="no-style" href={`tel:${cellphoneNumber}`}>
-                        <CallIcon /> {cellphoneNumber}
-                    </a>
-                </li>
-                <li>
-                    <a className="no-style" href={`mailto:${emailAddress}`}>
-                        <EmailIcon /> {emailAddress}
-                    </a>
-                </li>
-                <li>
-                    <a
-                        className="no-style"
-                        href={`https://www.linkedin.com/in/${linkedinUsername}`}
-                    >
-                        <LinkedInIcon /> @{linkedinUsername}
-                    </a>
-                </li>
-                <li>
-                    <a
-                        className="no-style"
-                        href={`https://t.me/${telegramUsername}`}
-                    >
-                        <TelegramIcon /> @{telegramUsername}
-                    </a>
-                </li>
-                <li>
-                    <a
-                        className="no-style"
-                        href={`https://github.com/${githubUsername}`}
-                    >
-                        <GitHubIcon /> @{githubUsername}
-                    </a>
-                </li>
+                {contactInfo.map((cInfo) => (
+                    <ContactInfoItem
+                        key={`${cInfo.type}:${cInfo.value}`}
+                        cInfo={cInfo}
+                    />
+                ))}
             </ul>
         </div>
     );

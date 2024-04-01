@@ -1,23 +1,31 @@
+import { ResumeProfile } from "src/types/resumeProfile";
 import ResumeContentComponent from "./ResumeContent";
 import ResumeSidebarComponent from "./ResumeSidebar";
+import { selectObjectFields } from "src/utils/objects";
 
-function ResumeComponent({ resume }: { resume: Resume }) {
+function ResumeComponent({ resume }: { resume: ResumeProfile }) {
     return (
         <>
-            <div className="flex w-full md:w-auto">
+            <div className="flex w-full md:w-auto print:w-full">
                 <ResumeSidebarComponent
-                    about={resume.about}
-                    contactInfo={resume.contactInfo}
-                    pdfLink={resume.pdfLink}
+                    {...selectObjectFields(resume, [
+                        "user",
+                        "jobTitle",
+                        "employmentStatus",
+                        "introduction",
+                    ])}
                 />
             </div>
 
             <div className="flex flex-grow">
                 <ResumeContentComponent
-                    interests={resume.interests}
-                    skills={resume.skills}
-                    projects={resume.projects}
-                    workExperiences={resume.workExperiences}
+                    {...selectObjectFields(resume, [
+                        "aboutMe",
+                        "interests",
+                        "skills",
+                        "projects",
+                        "workExperiences",
+                    ])}
                 />
             </div>
         </>

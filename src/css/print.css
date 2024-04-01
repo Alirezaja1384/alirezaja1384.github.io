@@ -1,7 +1,12 @@
 @media print {
+    @page {
+        margin: 1rem;
+        border: 1px solid black;
+    }
+
     body {
         /* Tell browsers to print background colors */
-        color-adjust: exact;
+        print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
     }
 
@@ -24,9 +29,4 @@
     #sidebar-content {
         flex-grow: 1;
     }
-}
-
-@page {
-    /* Remove browser default header (title) and footer (url) */
-    margin: 0;
 }

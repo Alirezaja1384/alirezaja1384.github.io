@@ -1,20 +1,22 @@
+import "./css/app.css";
+
 import axios from "axios";
 import { useEffect, useState } from "react";
 import applyCaseMiddleware from "axios-case-converter";
 
-import "./css/app.css";
 import ResumeComponent from "src/components/Resume";
 import LoadingComponent from "src/components/Loading";
 
 import { RESUME_DATA_URL } from "src/config";
+import { ResumeProfile } from "./types/resumeProfile";
 
 const client = applyCaseMiddleware(axios.create());
 
 function App() {
-    const [resume, setResume] = useState<Resume | null>(null);
+    const [resume, setResume] = useState<ResumeProfile | null>(null);
 
     const fetchResume = () => {
-        client.get<Resume>(RESUME_DATA_URL).then((response) => {
+        client.get<ResumeProfile>(RESUME_DATA_URL).then((response) => {
             setResume(response.data);
         });
     };
@@ -22,7 +24,7 @@ function App() {
     useEffect(fetchResume, []);
 
     useEffect(() => {
-        if (resume) document.title = `رزومه‌ی من | ${resume.about.fullName}`;
+        if (resume) document.title = `رزومه‌ی من | ${resume.user.fullName}`;
     }, [resume]);
 
     return (

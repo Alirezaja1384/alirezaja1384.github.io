@@ -3,9 +3,9 @@ import AppsIcon from "@mui/icons-material/Apps";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import HourglassBottomIcon from "@mui/icons-material/HourglassBottom";
 import ArticleIcon from "@mui/icons-material/Article";
-import LanguageIcon from "@mui/icons-material/Language";
+import Copyright from "@mui/icons-material/Copyright";
 
-const specialThanks: {
+const copyright: {
     id: string;
     href: string;
     text: string;
@@ -13,40 +13,48 @@ const specialThanks: {
 }[] = [
     {
         id: "online-cv",
-        text: "پروژه‌ی online-cv از sharu725",
+        text: "online-cv",
         icon: <GitHubIcon />,
         href: "https://github.com/sharu725/online-cv",
     },
     {
         id: "user-icon",
-        text: "آیکون کاربر از Smashicons - Flaticon",
+        text: "Smashicons",
         icon: <AppsIcon />,
         href: "https://www.flaticon.com/authors/smashicons",
     },
     {
         id: "loading-icon",
-        text: "آیکون بارگذاری از loading.io",
+        text: "loading.io",
         icon: <HourglassBottomIcon />,
         href: "https://loading.io/",
     },
     {
         id: "resume-icon",
-        text: "آیکون رزومه از Icons8",
+        text: "Icons8",
         icon: <ArticleIcon />,
         href: "https://icons8.com/icon/115648/resume",
     },
 ];
 
-function SpecialThanksComponent() {
+function CopyrightComponent() {
     return (
-        <div className="m-2">
-            <h2 className="font-bold text-xl">تشکر ویژه:</h2>
-            <div className="mr-1">
+        <div className="mb-4 text-white print:hidden">
+            <h2 className="font-bold text-xl">
+                <Copyright fontSize="large" /> کپی رایت
+            </h2>
+
+            <div className="mr-4 mt-2">
                 <ul>
-                    {specialThanks.map((st) => (
-                        <li key={st.id}>
-                            <a target="_blank" rel="noreferrer" href={st.href}>
-                                {st.icon} {st.text}
+                    {copyright.map((cr) => (
+                        <li key={cr.id}>
+                            <a
+                                target="_blank"
+                                rel="noreferrer"
+                                href={cr.href}
+                                className="no-style"
+                            >
+                                {cr.icon} {cr.text}
                             </a>
                         </li>
                     ))}
@@ -56,4 +64,4 @@ function SpecialThanksComponent() {
     );
 }
 
-export default SpecialThanksComponent;
+export default CopyrightComponent;

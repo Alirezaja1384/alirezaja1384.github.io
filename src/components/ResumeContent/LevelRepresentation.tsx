@@ -1,14 +1,15 @@
 import React from "react";
 import ProgressBar from "@ramonak/react-progress-bar";
+import { NameLevelPair } from "src/types/nameLevel";
 
-function PercentageRepresentationComponent({
+function LevelRepresentationComponent({
     title,
     icon,
-    interests,
+    levels,
 }: {
     title: string;
     icon?: React.ReactElement;
-    interests: NamePercentage[];
+    levels: NameLevelPair[];
 }) {
     return (
         <div className="flex flex-col m-2">
@@ -19,12 +20,15 @@ function PercentageRepresentationComponent({
                 style={{ direction: "ltr" }}
                 className="grid gap-2 grid-cols-1 text-left lg:grid-cols-2 print:grid-cols-2"
             >
-                {interests.map((interest) => (
-                    <div key={interest.name} className="w-full">
-                        {interest.name}
+                {levels.map(({ name, level, maxLevel }) => (
+                    <div
+                        key={`${name}:${level}:${maxLevel}`}
+                        className="w-full"
+                    >
+                        {name}
                         <ProgressBar
                             bgColor="var(--blue)"
-                            completed={interest.percentage}
+                            completed={(level / maxLevel) * 100}
                             isLabelVisible={false}
                             animateOnRender
                         />
@@ -35,4 +39,4 @@ function PercentageRepresentationComponent({
     );
 }
 
-export default PercentageRepresentationComponent;
+export default LevelRepresentationComponent;
