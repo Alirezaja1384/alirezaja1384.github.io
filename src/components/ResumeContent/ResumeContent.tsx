@@ -9,6 +9,7 @@ import LevelRepresentationComponent from "./LevelRepresentation";
 import { ResumeProfile } from "src/types/resumeProfile";
 import { NoBreak } from "../utils";
 import AboutMeComponent from "./AboutMe";
+import CopyrightComponent from "../shared/Copyright";
 
 function ResumeContentComponent({
     aboutMe,
@@ -44,10 +45,15 @@ function ResumeContentComponent({
                 icon={<EngineeringIcon fontSize="large" />}
                 workExperiences={workExperiences}
             />
+
             <ProjectsComponent
                 icon={<LaptopIcon fontSize="large" />}
                 projects={projects}
             />
+
+            <div className="md:hidden">
+                <CopyrightComponent theme="blue" />
+            </div>
         </div>
     );
 }

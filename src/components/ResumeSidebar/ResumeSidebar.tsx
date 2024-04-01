@@ -4,7 +4,7 @@ import MoreAboutMeComponent from "./MoreAboutMe";
 import EtceteraComponent from "./Etcetera";
 import { User } from "src/types/user";
 import { EmploymentStatus } from "src/types/resumeProfile";
-import CopyrightComponent from "./Copyright";
+import CopyrightComponent from "../shared/Copyright";
 
 function ResumeSidebarComponent({
     user,
@@ -39,7 +39,9 @@ function ResumeSidebarComponent({
                     <EtceteraComponent />
                 </div>
 
-                <CopyrightComponent />
+                <div className="hidden md:block">
+                    <CopyrightComponent theme="white" />
+                </div>
             </div>
         </div>
     );

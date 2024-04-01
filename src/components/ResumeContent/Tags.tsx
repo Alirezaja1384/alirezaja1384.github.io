@@ -3,7 +3,7 @@ function Tags({ tags }: { tags: string[] }) {
         <div className="flex">
             <div style={{ direction: "ltr" }} className="text-left ml-auto">
                 {tags.map((tag) => (
-                    <button disabled className="badge badge-gray">
+                    <button disabled key={tag} className="badge badge-gray">
                         {tag}
                     </button>
                 ))}

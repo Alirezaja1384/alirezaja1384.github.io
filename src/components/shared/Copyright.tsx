@@ -37,10 +37,15 @@ const copyright: {
     },
 ];
 
-function CopyrightComponent() {
+function CopyrightComponent({ theme }: { theme: "white" | "blue" }) {
     return (
-        <div className="mb-4 text-white print:hidden">
-            <h2 className="font-bold text-xl">
+        <div className="mb-4">
+            <h2
+                className={
+                    "font-bold text-xl " +
+                    (theme === "white" ? " text-white" : "text-blue")
+                }
+            >
                 <Copyright fontSize="large" /> کپی رایت
             </h2>
 
@@ -52,7 +57,7 @@ function CopyrightComponent() {
                                 target="_blank"
                                 rel="noreferrer"
                                 href={cr.href}
-                                className="no-style"
+                                className={theme === "white" ? "no-style" : ""}
                             >
                                 {cr.icon} {cr.text}
                             </a>
